@@ -9,47 +9,9 @@ babylon_tower_creds_secret: babylon1-api-creds
 babylon_tower_job_path: /api/v2/job_templates/job-runner/launch/
 poolboy_namespace: poolboy
 poolboy_version: 0.1.4
-agnosticv_repo_ssh_key: |-
-  -----BEGIN OPENSSH PRIVATE KEY-----
-  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
-  -----END OPENSSH PRIVATE KEY-----
-aws_access_key_id: AKIAZ4XISNS2SIDCDZFB
-aws_secret_access_key: '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'
+agnosticv_repo_ssh_key: ''
+aws_access_key_id: ''
+aws_secret_access_key: ''
 
 operators:
   deploy:
