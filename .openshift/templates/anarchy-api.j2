@@ -1,0 +1,26 @@
+---
+apiVersion: gpte.redhat.com/v1
+kind: AnarchyAPI
+metadata:
+  name: babylon
+  namespace: {{ anarchy_operator_namespace }}
+spec:
+  baseUrl: {{ babylon_tower_url }}
+  basicAuth:
+    secretName: {{ babylon_tower_creds_secret }}
+  caCertificate: ""
+  callbackEventNameParameter: event
+  callbackTokenParameter: babylon_callback_token
+  callbackUrlParameter: babylon_callback_url
+{%- raw %}
+  data: '{{: { "extra_vars": parameters } | to_json :}}'
+{% endraw %}
+  parameters:
+{%- raw %}
+    babylon_deployer_action: '{{: parameters.ACTION :}}'
+{% endraw %}
+  path: {{ babylon_tower_job_path }}
+  headers:
+  - name: Content-type
+    value: application/json
+  method: POST
